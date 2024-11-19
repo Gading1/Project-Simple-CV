@@ -1,0 +1,333 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Gloria+Hallelujah&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Gloria+Hallelujah&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+/*
+===============
+|| GLOBAL STYLING
+===============
+*/
+
+main {
+  width: 900px;
+  border: 2px solid black;
+  margin-inline: auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  background-color: white;
+}
+
+/*
+===============
+|| FONT STYLING
+===============
+*/
+
+.line {
+  border: none;
+  padding: 1px;
+  background-color: black;
+}
+
+a {
+  text-decoration: none;
+  color: rgba(0, 0, 255, 0.733);
+}
+
+br {
+  margin-block: 1px;
+}
+
+h1,
+h3,
+h5 {
+  font-family: "Gloria Hallelujah", cursive;
+}
+
+p,
+li {
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 500;
+}
+
+.assistentName {
+  color: rgba(128, 128, 128, 0.454);
+}
+
+/*
+===============
+|| HEADER
+===============
+*/
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 1.5em;
+  padding-top: 1em;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+header h1 {
+  text-align: center;
+  margin-block: 2.5em;
+}
+
+/*
+===============
+|| MAIN ARTICLE
+===============
+*/
+.main__article {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.main__article h3 {
+  padding-left: 1rem;
+  padding-block: 1rem;
+}
+
+.main__article p,
+h5 {
+  padding-left: 1rem;
+  padding-top: 0.25rem;
+  text-decoration: none;
+}
+
+.main__article ul {
+  display: inline;
+}
+
+.main__article li {
+  padding-left: 1rem;
+}
+
+.box__projects {
+  grid-row: span 2;
+  border-block: 2px solid black;
+  border-right: 2px solid black;
+}
+
+.box__projects li {
+  padding-block: 0.5rem;
+}
+
+.box__education {
+  grid-row: span 2;
+  padding-bottom: 1em;
+  padding-right: 1em;
+  border-block: 2px solid black;
+  border-left: 2px solid black;
+}
+
+.box__workExperience {
+  border-block: 2px solid black;
+}
+
+a:hover {
+  color: rgba(0, 0, 255, 0.333);
+}
+
+.box__openSource {
+  padding-right: 1em;
+  border-bottom: 2px solid black;
+}
+
+.box__openSource h5 {
+  padding-top: 1rem;
+}
+
+/*
+===============
+|| REVIEWS
+===============
+*/
+.reviews__container {
+  padding-inline: 1.5em;
+}
+
+.reviews__container h3 {
+  padding-inline: 0;
+  padding-block: 1em;
+}
+
+.reviews__article {
+  display: flex;
+  gap: 2em;
+  padding-left: 0;
+}
+
+.reviews__article p {
+  padding-inline: 1.5em;
+}
+
+.reviews__box {
+  display: grid;
+  place-items: center;
+  border: 2px solid black;
+  border-radius: 2em;
+  width: 225px;
+  height: 200px;
+}
+
+footer {
+  padding-top: 10em;
+  padding-bottom: 20em;
+  text-align: center;
+}
+
+/*
+===============
+|| MEDIA QUERIES
+===============
+*/
+
+@media (max-width: 900px) {
+  /*
+  ===============
+  || GLOBAL STYLE
+  ===============
+  */
+  .line__responsive {
+    border: 1px solid black;
+  }
+
+  main {
+    width: 450px;
+    display: grid;
+    grid-template-areas:
+      "header"
+      "main__article"
+      "reviews__container"
+      "footer";
+  }
+
+  header {
+    grid-area: header;
+    place-items: center;
+    width: 450px;
+  }
+
+  nav {
+    width: auto;
+  }
+
+  nav ul {
+    padding-top: 0.5em;
+  }
+
+  header h1 {
+    margin: 0;
+    padding-block: 0.5em;
+  }
+
+  /*
+  ===============
+  || STYLING
+  ===============
+  */
+
+  nav {
+    display: grid;
+    text-align: center;
+  }
+
+  .main__article {
+    grid-area: main__article;
+    display: grid;
+    flex-direction: column;
+    width: 448px;
+
+    grid-template-areas:
+      "box__projects"
+      "box__workExperience"
+      "box__openSource"
+      "box__education";
+  }
+
+  .box__projects {
+    grid-area: box__projects;
+    grid-column: span 3;
+    text-align: center;
+    border-right: none;
+  }
+
+  .box__projects li {
+    background-color: whitesmoke;
+    border-right: 2px solid black;
+  }
+
+  .box__workExperience {
+    grid-area: box__workExperience;
+    grid-column: span 3;
+    background-color: whitesmoke;
+    padding-bottom: 1em;
+    border-right: 2px solid black;
+    border-top: none;
+  }
+
+  .box__workExperience h3 {
+    text-align: center;
+    background-color: white;
+  }
+
+  .box__workExperience h5 {
+    padding-top: 1em;
+  }
+
+  .box__openSource {
+    grid-area: box__openSource;
+    grid-column: span 3;
+    background-color: whitesmoke;
+    padding-bottom: 1em;
+    border-right: 2px solid black;
+  }
+
+  .box__education {
+    grid-area: box__education;
+    grid-column: span 3;
+    border-left: none;
+    border-top: none;
+  }
+
+  .box__education h3 {
+    text-align: center;
+  }
+
+  .reviews__container {
+    grid-area: reviews__container;
+    place-items: center;
+    width: 450px;
+  }
+
+  .reviews__article {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .reviews__box {
+    width: 400px;
+  }
+
+  .box2 {
+    display: none;
+  }
+
+  footer {
+    grid-area: footer;
+    padding-block: 1em;
+  }
+}
